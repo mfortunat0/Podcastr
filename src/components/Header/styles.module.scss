@@ -3,7 +3,7 @@
   height: 6.5rem;
   display: flex;
   align-items: center;
-  padding: 2rem 4rem;
+  padding: 1.5rem 1rem 1.5rem 3rem;
   border-bottom: 1px solid var(--gray-100);
 
   p{
@@ -15,5 +15,33 @@
   span{
     margin-left: auto;
     text-transform: capitalize;
+  }
+
+  button{ 
+    margin-left: 20px;
+    font-size: 0;
+    border: unset;
+    outline:unset;
+    padding: 2px;
+    background-color: transparent;
+    img{
+      width: 40px;
+      height: 20px;
+      cursor: pointer;
+    }
+  }
+}
+
+.headerContainerDark{
+  background-color: var(--black);
+  border-bottom: 1px solid transparent;
+
+  p{
+    border-bottom: 1px solid transparent;
+    color:  var(--gray-100);
+  }
+
+  span{
+    color: var(--gray-100);
   }
 }

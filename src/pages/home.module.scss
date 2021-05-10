@@ -1,5 +1,5 @@
 .homepage{
-  padding: 0 4rem;
+  padding: 0 1rem;
   height: calc(100vh - 6.5rem);
   overflow-y: scroll;
 
@@ -7,6 +7,14 @@
     margin-top: 3rem;
     margin-bottom: 1.5rem;
   }
+}
+
+.homepage::-webkit-scrollbar-thumb {
+  background: var(--black);
+  border-radius: 2px;
+}
+.homepage::-webkit-scrollbar {
+  width: 5px;
 }
 
 .latestEpisodes{
@@ -19,7 +27,7 @@
     li{
       background-color: var(--white);
       border: 1px solid var(--gray-100);
-      padding: 1.25rem;
+      padding: 1rem;
       border-radius: 1.5rem;
       position: relative;
       display: flex;
@@ -40,14 +48,15 @@
           font-family: Lexend, sans-serif;
           font-weight: 600;
           text-decoration: none;
-          line-height: 1.4rem;
+          line-height: 1.2rem;
+          font-size: 0.9rem;
 
           &:hover{
             text-decoration: underline;
           }
         }
         p{
-          font-size: 0.875rem;
+          font-size: 0.7rem;
           margin-top: 0.5rem;
            max-width: 70%;
            white-space: nowrap;
@@ -57,7 +66,7 @@
         span{
           display: inline-block;
           margin-top: 0.5rem;
-          font-size: 0.875rem;
+          font-size: 0.6rem;
           &:last-child{
             margin-left: 0.5rem;
             padding-left: 0.5rem;
@@ -130,8 +139,8 @@
         font-family: Lexend,sans-serif;
         font-weight: 600;
         text-decoration: none;
-        line-height: 1.4rem;
-        font-size: 1rem;
+        line-height: 1.2rem;
+        font-size: 0.9rem;
         &:hover{
           text-decoration: underline;
         }
@@ -151,6 +160,53 @@
         &:hover{
           filter: brightness(0.95);
         }
+      }
+    }
+  }
+}
+
+.homepageDark{
+  background-color: var(--dark);
+}
+.homepageDark::-webkit-scrollbar-thumb {
+  background: var(--gray-100);
+}
+
+.latestEpisodesDark{
+  ul{
+    li{
+      background-color: var(--black);
+      border: 1px solid transparent;
+      .episodesDetails{
+        a{
+          color: var(--gray-100);
+        }
+        p,span{
+          color: var(--gray-100);
+        }
+      } 
+    }
+  }
+
+  h2{
+    color: var(--gray-100);
+  }
+}
+
+.allEpisodesDark{
+  h2{
+    color: var(--gray-100);
+  }
+  table{
+    th{
+      color: var(--gray-100);
+      border-bottom: 1px solid var(--gray-800);
+    }
+    td{
+      border-bottom: 1px solid var(--gray-800);
+      color: var(--gray-200);
+      a{
+        color: var(--gray-100);
       }
     }
   }

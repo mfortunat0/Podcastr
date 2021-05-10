@@ -8,6 +8,7 @@ import Link from "next/link";
 import styles from "./episode.module.scss";
 import Head from "next/head";
 import { usePlayer } from "../../contexts/PlayerContext";
+import { useDark } from "../../contexts/DarkmodeContext";
 
 interface Episode {
   id: string;
@@ -27,8 +28,15 @@ interface EpisodeProps {
 
 export default function Episodes({ episode }: EpisodeProps) {
   const { play } = usePlayer();
+  const { isDarkModeActive } = useDark();
   return (
-    <div className={styles.episode}>
+    <div
+      className={
+        isDarkModeActive
+          ? `${styles.episode} ${styles.episodeDark}`
+          : styles.episode
+      }
+    >
       <Head>
         <title>{episode.title} | Podcastr</title>
       </Head>

@@ -1,21 +1,33 @@
+.episode::-webkit-scrollbar-thumb {
+  background: var(--black);
+  border-radius: 2px;
+}
+.episode::-webkit-scrollbar {
+  width: 5px;
+}
+
 .episode{
-  max-width: 45rem;
-  padding: 3rem 2rem;
-  margin: 0 auto;
+  padding: 3rem 10rem;
+  overflow: scroll;
+  height: calc(100vh - 6.5rem);
+  width: 100%;  
 
   .thumbnailContainer{
-    position: relative;
-
+    display: flex;
+    max-width: 700px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
     img{
       border-radius: 1rem;
     }
 
     button{
+      position: relative;
       width: 3rem;
       height: 3rem;
       border-radius: 0.75rem;
       border:0;
-      position: absolute;
       z-index: 5;
       font-size: 0;
       transition: filter 0.2s;
@@ -23,16 +35,12 @@
         filter: brightness(0.95);
       }
       &:first-child{
-        left: 0;
-        top: 50%;
+        left: 3%;
         background-color: var(--purple-500);
-        transform: translate(-50%, -50%);
       }
       &:last-child{
-        right: 0;
-        top: 50%;
+        left: -3%;
         background-color: var(--green-500);
-        transform: translate(50%, -50%);
       }
     }
   }
@@ -79,4 +87,25 @@
     }
   }
 }
+
+.episodeDark{
+  background-color: var(--dark);
+  header{
+    h1{
+      color: var(--gray-100);
+    }
+    span{
+      color: var(--gray-500);
+    }
+  }
+  .description{
+    p{
+      color: var(--gray-100);
+    }
+  }
+}
+.episodeDark::-webkit-scrollbar-thumb {
+  background: var(--gray-100);
+}
+
 

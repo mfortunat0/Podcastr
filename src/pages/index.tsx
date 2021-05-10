@@ -1,13 +1,14 @@
-import { GetStaticProps } from "next";
+import styles from "./home.module.scss";
 import Image from "next/image";
-import Link from "next/link";
+import { GetStaticProps } from "next";
 import { api } from "../services/api";
 import { format, parseISO } from "date-fns";
-import ptBR from "date-fns/locale/pt-BR";
 import { convertDurationToTimeString } from "../utils/convertDurationToTimeString";
 import { usePlayer } from "../contexts/PlayerContext";
+import Link from "next/link";
+import ptBR from "date-fns/locale/pt-BR";
 import Head from "next/head";
-import styles from "./home.module.scss";
+import { useDark } from "../contexts/DarkmodeContext";
 
 interface Episode {
   id: string;
@@ -28,13 +29,26 @@ interface HomeProps {
 export default function Home({ allEpisodes, latestEpisodes }: HomeProps) {
   const { playList } = usePlayer();
   const episodeList = [...latestEpisodes, ...allEpisodes];
+  const { isDarkModeActive } = useDark();
 
   return (
-    <div className={styles.homepage}>
+    <div
+      className={
+        isDarkModeActive
+          ? `${styles.homepage} ${styles.homepageDark}`
+          : styles.homepage
+      }
+    >
       <Head>
         <title>Home | Podcastr</title>
       </Head>
-      <section className={styles.latestEpisodes}>
+      <section
+        className={
+          isDarkModeActive
+            ? `${styles.latestEpisodes} ${styles.latestEpisodesDark}`
+            : styles.latestEpisodes
+        }
+      >
         <h2>Últimos lançamentos</h2>
         <ul>
           {latestEpisodes.map((episode, index) => {
@@ -66,7 +80,13 @@ export default function Home({ allEpisodes, latestEpisodes }: HomeProps) {
           })}
         </ul>
       </section>
-      <section className={styles.allEpisodes}>
+      <section
+        className={
+          isDarkModeActive
+            ? `${styles.allEpisodes} ${styles.allEpisodesDark}`
+            : styles.allEpisodes
+        }
+      >
         <h2>Todos episódios</h2>
         <table cellSpacing={0}>
           <thead>
