@@ -8,6 +8,8 @@ It is a web App that allows users to listen to their favorite podcasts, see the 
 - [x] Typescript
 - [x] Sass
 - [x] Axios
+- [x] Eslint
+- [x] Prettier
 
 ## Features
 - [x] Dark Mode
