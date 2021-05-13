@@ -18,6 +18,7 @@
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
+    
     img{
       border-radius: 1rem;
     }
@@ -25,6 +26,7 @@
     button{
       position: relative;
       width: 3rem;
+      min-width: 32px;
       height: 3rem;
       border-radius: 0.75rem;
       border:0;
@@ -59,7 +61,6 @@
       font-size: 0.875rem;
 
       & + span{
-        margin-left: 1rem;
         padding-left: 1rem;
         position: relative;
 
@@ -70,7 +71,7 @@
           border-radius: 2px;
           background-color: #ddd;
           position: absolute;
-          left: 0;
+          left: 10%;
           top: 50%;
           transform: translate(-50%,-50%);
         }
@@ -106,6 +107,38 @@
 }
 .episodeDark::-webkit-scrollbar-thumb {
   background: var(--gray-100);
+}
+
+@media(max-width: 1024px){
+  .episode{
+    padding: 3rem 15vw;
+    .description{
+      margin-bottom: 24vh;
+    }
+  }
+}
+
+@media(max-width: 425px){
+  .episode{
+    padding: 3rem 0.8rem;
+
+    .thumbnailContainer{
+      img:nth-child(2){
+        width: 500px;
+      }
+    }
+
+    header{
+      span{
+        & + span{
+          padding: 0;
+          &::before{
+            display: none;
+          }
+        }
+      }
+    }
+  }
 }
 
 

@@ -22,6 +22,9 @@
 
   footer{
     align-items: stretch;
+    .title{
+      display: none;
+    }
     &.empty .progress{
       opacity: 0.5;
     }
@@ -53,7 +56,6 @@
 }
 
 .emptyPlayer{
-  width: 100%;
   height: 15rem;
   border: 1.5px dashed var(--purple-300);
   border-radius: 1.5rem;
@@ -126,6 +128,101 @@
       &:hover:not(:disabled){
         filter: brightness(0.95)
       }
+    }
+  }
+}
+
+@media(max-width: 1024px){
+  .emptyPlayer{
+    width: 20%;
+    height: 100%;
+    padding: 2rem;
+  }
+  .playerContainer{
+    width: 100vw;
+    position: fixed;
+    height: 28vh;
+    flex-direction: row;
+    justify-content: space-around;
+    bottom: 0;
+    padding: 10px 0;
+
+    footer{
+      width: 30%;
+    }
+
+    header{
+      display: none;
+    }
+    .currentEpisode{
+      padding: 0 1.5rem;
+      img{
+        width: 19vw;
+        height: 6rem;
+      }
+      strong{
+        margin-top: 0.5rem;
+        font-size: 0.9rem;
+      }
+      span{
+        margin-top: 0.5rem;
+        font-size: 0.9rem;
+      }
+    }
+  }
+  
+}
+
+@media(max-width: 768px){
+  .playerContainer{
+    footer{
+      align-items: center;
+      width: 40%;
+    }
+    .buttons{
+      margin-top: 1rem;
+    }
+    .currentEpisode{
+      padding: 0 1.5rem;
+      img{
+        width: 16vw;
+        height: 5rem;
+      }
+      strong{
+        margin-top: 0.5rem;
+        font-size: 0.8rem;
+      }
+      span{
+        margin-top: 0.2rem;
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+@media(max-width: 425px){
+  .emptyPlayer ,.currentEpisode{
+    display: none;
+  }
+  .playerContainer{
+    footer{
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      .title{
+        text-align: center;
+        display: inline;
+        font-size: 0.8rem;
+        margin-bottom: 10px;
+      }
+    }
+    .buttons{
+      margin-top: 0.5rem;
+    }
+    .progress{
+      margin-top: 0.5rem;
+      width: 100%;
     }
   }
 }

@@ -45,3 +45,32 @@
     color: var(--gray-100);
   }
 }
+
+@media(max-width: 690px){
+  .headerContainer{
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    p,span{
+      margin-left: 1rem;
+      padding-left: 1rem;
+      font-size: 1rem;
+    }
+  }
+}
+
+@media(max-width: 425px){
+  .headerContainer{
+    justify-content: center;
+    p{
+      display: none;
+    }
+  }
+}
+
+@media(max-width: 360px){
+  .headerContainer{
+    span{
+      font-size: 0.9rem;
+    }
+  }
+}

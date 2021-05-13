@@ -84,6 +84,7 @@ export default function Player() {
       )}
 
       <footer className={!episode ? styles.empty : ""}>
+        {episode && <span className={styles.title}>{episode.title}</span>}
         <div className={styles.progress}>
           <span>{convertDurationToTimeString(progress)}</span>
           <div className={styles.slider}>

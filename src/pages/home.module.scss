@@ -35,12 +35,12 @@
 
       img{
         width: 6rem;
-        height: 6rem;
+        height: 3.5rem;
         border-radius: 1rem;
       }
 
       .episodesDetails{
-        flex:1;
+        width: 60%;
         margin-left: 1rem;
         a{
           display: block;
@@ -109,8 +109,6 @@
 }
 
 .allEpisodes{
-  padding-bottom: 2rem;
-
   table{
     width: 100%;
 
@@ -209,5 +207,91 @@
         color: var(--gray-100);
       }
     }
+  }
+}
+
+@media(max-width: 1120px){
+  .allEpisodes{
+    margin-bottom: 30vh;
+  }
+}
+
+@media(max-width: 930px){
+  .homepage{
+    h2{
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+  }
+  .latestEpisodes{
+    ul{
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      align-items: center;
+      li{
+        width: 80%;
+      }
+    }
+  }
+}
+
+@media(max-width: 630px){
+  .allEpisodes{
+    table{
+      th,td{
+        padding: 0.75rem 0.2rem;
+      }
+    }
+  }
+}
+
+@media(max-width: 595px){
+  .latestEpisodes{
+    ul{
+      li{
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media(max-width: 470px){
+  .homepage{
+    padding: 0 0.2rem;
+  }
+
+  .allEpisodes{
+    table{
+      th:first-child{
+        display: none;
+      }
+      tr{
+        td:nth-child(2){
+          padding-left: 1rem;
+        }
+        td:nth-child(4){
+          text-align: center;
+        }
+      }
+      td{
+        font-size: 0.65rem;
+        a{
+          font-size: 0.7rem;
+        }
+      }
+      tr{
+        td:first-child{
+          display: none;
+        }
+      } 
+    }
+  }
+}
+
+@media(max-width: 320px){
+  .allEpisodes{
+    margin-bottom: 17vh;
   }
 }
