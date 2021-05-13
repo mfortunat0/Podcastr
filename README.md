@@ -13,7 +13,7 @@ It is a web App that allows users to listen to their favorite podcasts, see the 
 
 ## Features
 - [x] Dark Mode
-- [ ] responsiveness
+- [x] responsiveness
 - [ ] PWA
 
 ## Run project
