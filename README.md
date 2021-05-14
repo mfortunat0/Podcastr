@@ -28,4 +28,4 @@ It is a web App that allows users to listen to their favorite podcasts, see the 
 ```
 
 ## Preview
-![Preview](.github/preview.gif)
+![Preview](.github/previewFinal.gif)
